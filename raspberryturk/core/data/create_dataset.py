@@ -1,8 +1,8 @@
-import numpy as np
-import cv2
-import os
-import argparse
-import json
+import numpy as np #numpy is for workig with arrays
+import cv2 #WONT NEED for cv
+import os #https://docs.python.org/3/library/os.html
+import argparse #https://docs.python.org/3/library/argparse.html
+import json #https://docs.python.org/3/library/json.html
 from raspberryturk import setup_console_logging
 from raspberryturk.core.vision.square import Square
 from raspberryturk.core.data import class_encoding
