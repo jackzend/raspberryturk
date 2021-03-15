@@ -25,7 +25,8 @@ def _status(args):
         os.system(command)
     else:
         with io.open(path, 'r', encoding='utf8') as f:
-            print f.read()
+            print(f.read())
+
 
 def _get_args():
     desc = "Utility for starting and stopping the raspberryturk daemon (raspberryturkd)."

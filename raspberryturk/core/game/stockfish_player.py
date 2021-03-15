@@ -1,4 +1,5 @@
-from chess import uci
+from chess import uci #need to find the version number for python chess used,
+# this code uses and old version
 
 class StockfishPlayer(object):
     def __init__(self):
