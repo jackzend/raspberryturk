@@ -1,6 +1,8 @@
 import RPi.GPIO as GPIO
 from time import sleep
 import chess
+from pypose.ax12 import *
+from pypose.driver import Driver
 
 electromagnet_pin = 40
 servo_pin = 38
