@@ -39,15 +39,19 @@ class Arm(object):
         self.driver = Driver(port=port)
         self.movement_engine = ArmMovementEngine()
 
+    #Closes the window the driver has control of
     def close(self):
         self.driver.close()
 
+    #Recenters the arm to its starting position
     def recenter(self):
         self.move((512, 512))
 
+    #Moves arm to its rest position
     def return_to_rest(self):
         self.move_to_point([20, 13.5])
 
+    #Moves arm to correct position
     def move(self, goal_position):
         start_position = self.current_position()
         self.set_speed([MIN_SPEED, MIN_SPEED])
@@ -58,19 +62,24 @@ class Arm(object):
             speed = [_adjusted_speed(start_position[i%2], goal_position[i%2], position[i%2]) for i in SERVOS]
             self.set_speed(speed)
 
+    #Determines where robot needs to move
     def move_to_point(self, pt):
         goal_position = self.movement_engine.convert_point(pt)
         self.move(goal_position)
 
+    #Sets the speed of the servos
     def set_speed(self, speed):
         for i in SERVOS:
             self.driver.setReg(i, P_GOAL_SPEED_L, [speed[i%2]%256, speed[i%2]>>8])
 
+    #Returns the current position of the servo
     def current_position(self):
         return self._values_for_register(P_PRESENT_POSITION_L)
 
+    #Checks if the servos are moving
     def _is_moving(self):
         return any([self.driver.getReg(index, P_MOVING, 1) == 1 for index in SERVOS])
 
+    #Returns the value in specified register
     def _values_for_register(self, register):
         return [_register_bytes_to_value(self.driver.getReg(index, register, 2)) for index in SERVOS]
