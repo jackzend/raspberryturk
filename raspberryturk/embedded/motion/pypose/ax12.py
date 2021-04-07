@@ -24,6 +24,7 @@
 # the pypose project (https://github.com/vanadiumlabs/pypose).
 
 # Control Table Symbolic Constants - EEPROM AREA
+# Sets all registers to a constant
 P_MODEL_NUMBER_L = 0
 P_MODOEL_NUMBER_H = 1
 P_VERSION = 2

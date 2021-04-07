@@ -15,9 +15,11 @@ MIN_SPEED = 20
 MAX_SPEED = 80
 RESTING_POSITION = (512, 512)
 
+# Converts the registers bytes to the base 10 value of the register
 def _register_bytes_to_value(register_bytes):
     return register_bytes[0] + (register_bytes[1]<<8)
 
+# Takes derivative of easeInOutQuint at x0 = p
 def _easing_derivative(p):
     d = 0.0
     try:
@@ -26,14 +28,16 @@ def _easing_derivative(p):
         pass
     return d
 
+# Given the start position, current position, and goal position, adjusts the speed of the arm
 def _adjusted_speed(start_position, goal_position, position):
     r = np.array([start_position, goal_position])
-    clipped_position = np.clip(position, r.min(), r.max())
-    f = interp1d(r, [0,1])
-    adj = _easing_derivative(f(clipped_position)) / _easing_derivative(0.5)
+    clipped_position = np.clip(position, r.min(), r.max())  # Clip keeps the position in the defined range
+    f = interp1d(r, [0,1])  #interpolates a 1D function
+    adj = _easing_derivative(f(clipped_position)) / _easing_derivative(0.5) 
     amp = easeOutSine(abs(goal_position - start_position) / 1023.0)
     return np.int(MIN_SPEED + (MAX_SPEED - MIN_SPEED) * adj * amp)
 
+# Creates a class for the arm object
 class Arm(object):
     def __init__(self, port="/dev/ttyUSB0"):
         self.driver = Driver(port=port)
