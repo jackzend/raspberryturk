@@ -52,7 +52,7 @@ def enter_game(fn):
 
 def get_board():
     g = _game()
-    print(g.board())
+    print(g.end().board())
     if g.end() == None:
         return g.board()
     return g.end().board()
