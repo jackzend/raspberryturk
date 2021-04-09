@@ -64,6 +64,7 @@ class Agent(object): # UNCOMMENT MOTION STUFF WHEN WE HAVE MOTION
 
         if b.is_game_over():
             self._logger.info("Game has ended, result: {}".format(b.result()))
+            return False
             game.start_new_game()
         elif b.turn == chess.WHITE: # this is the players move so the camera has to pick up the difference
             print("Legal Moves: ")
@@ -78,3 +79,4 @@ class Agent(object): # UNCOMMENT MOTION STUFF WHEN WE HAVE MOTION
             #self._motion_coordinator.move_piece(m, b) # move the piece # uncomment this to move
             game.apply_move(m)
         self._write_status() # update to status.txt
+        return True

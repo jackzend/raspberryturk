@@ -32,7 +32,8 @@ class RaspberryTurkDaemon(object):
 def main():
     with Agent() as a:
         while True:
-            a.perception_action_sequence()
+            if a.perception_action_sequence():
+                break
     # rtd = RaspberryTurkDaemon()
     #daemon_runner = runner.DaemonRunner(rtd)
     #daemon_runner.daemon_context.signal_map = {
