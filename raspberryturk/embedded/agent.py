@@ -75,6 +75,6 @@ class Agent(object): # UNCOMMENT MOTION STUFF WHEN WE HAVE MOTION
                 game.apply_move(m) # apply the move
         else: # this is the turks move
             m = self._player.select_move(b) # select move from stockfish
-            self._motion_coordinator.move_piece(m, b) # move the piece
+            #self._motion_coordinator.move_piece(m, b) # move the piece
             game.apply_move(m)
         self._write_status() # update to status.txt
