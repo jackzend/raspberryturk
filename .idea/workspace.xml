@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9088468d-1d32-4076-8468-6db813abcfc8" name="Default Changelist" comment="-- Same commit as before but uncommented some lines">
+      <change beforePath="$PROJECT_DIR$/raspberryturk/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/raspberryturk/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/raspberryturk/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/raspberryturk/__main__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/raspberryturk/core/data/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raspberryturk/core/data/class_encoding.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raspberryturk/core/data/create_dataset.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raspberryturk/core/data/dataset.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raspberryturk/core/data/feature_extractor.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raspberryturk/core/data/process_raw.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raspberryturk/core/data/raw_pixels_extractor.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raspberryturk/core/vision/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raspberryturk/core/vision/chessboard_frame.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raspberryturk/core/vision/constants.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raspberryturk/core/vision/helpers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raspberryturk/core/vision/square.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raspberryturk/embedded/agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/raspberryturk/embedded/agent.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/raspberryturk/embedded/data/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raspberryturk/embedded/data/collection.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raspberryturk/embedded/game/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/raspberryturk/embedded/game/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/raspberryturk/embedded/motion/gripper.py" beforeDir="false" afterPath="$PROJECT_DIR$/raspberryturk/embedded/motion/gripper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/raspberryturk/embedded/raspberryturkd.py" beforeDir="false" afterPath="$PROJECT_DIR$/raspberryturk/embedded/raspberryturkd.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/raspberryturk/embedded/vision/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raspberryturk/embedded/vision/chess_camera.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raspberryturk/embedded/vision/chessboard_perspective_transform.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raspberryturk/embedded/vision/square_color_detector.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1pUmQ1S5UZ8hEsUBQYnNXG8kY7j" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunManager" selected="Python.raspberryturk_debug">
+    <configuration name="__main__" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="raspberryturk" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/raspberryturk" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/raspberryturk/__main__.py" />
+      <option name="PARAMETERS" value="start" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="raspberryturk_debug" type="PythonConfigurationType" factoryName="Python">
+      <module name="raspberryturk" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/build/lib/raspberryturk" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="raspberryturk" />
+      <option name="PARAMETERS" value="start" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="true" />
+      <option name="MODULE_MODE" value="true" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.raspberryturk_debug" />
+      <item itemvalue="Python.__main__" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.__main__" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9088468d-1d32-4076-8468-6db813abcfc8" name="Default Changelist" comment="" />
+      <created>1615246023998</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1615246023998</updated>
+      <workItem from="1615246030757" duration="2907000" />
+      <workItem from="1615844519000" duration="4498000" />
+      <workItem from="1617300832031" duration="1065000" />
+      <workItem from="1617758482464" duration="810000" />
+      <workItem from="1617811254692" duration="2937000" />
+      <workItem from="1617823747192" duration="22359000" />
+    </task>
+    <task id="LOCAL-00001" summary="Fixed small python version discrepencies in __main__.py. (wrong print statement) and human_player.py (old type of error handling).&#10;&#10;added comment in stockfish_player.py (the whole code is running on an old version of python chess. we need to either run on that version or convert the code to the newest version)">
+      <created>1615848637375</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1615848637375</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Fixed small python version discrepencies in __main__.py. (wrong print statement) and human_player.py (old type of error handling).&#10;&#10;added comment in stockfish_player.py (the whole code is running on an old version of python chess. we need to either run on that version or convert the code to the newest version)">
+      <created>1615848652559</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1615848652559</updated>
+    </task>
+    <task id="LOCAL-00003" summary="requirements.txt file &#10;&#10;run &quot;pip install -r requirements.txt&quot; and it should automattically pull the packages and the proper versions">
+      <created>1617830582351</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1617830582351</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fixed some issues with gripper.py importing the wrong package">
+      <created>1617932458527</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1617932458528</updated>
+    </task>
+    <task id="LOCAL-00005" summary="-- Same commit as before but uncommented some lines">
+      <created>1617932607417</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1617932607417</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="jack_local_version" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Fixed small python version discrepencies in __main__.py. (wrong print statement) and human_player.py (old type of error handling).&#10;&#10;added comment in stockfish_player.py (the whole code is running on an old version of python chess. we need to either run on that version or convert the code to the newest version)" />
+    <MESSAGE value="requirements.txt file &#10;&#10;run &quot;pip install -r requirements.txt&quot; and it should automattically pull the packages and the proper versions" />
+    <MESSAGE value="fixed some issues with gripper.py importing the wrong package" />
+    <MESSAGE value="-- Same commit as before but uncommented some lines" />
+    <option name="LAST_COMMIT_MESSAGE" value="-- Same commit as before but uncommented some lines" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/build/lib/raspberryturk/__main__.py</url>
+          <line>53</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/venv/lib/python3.9/site-packages/raspberryturk-0.0.1b0-py3.9.egg/raspberryturk/__main__.py</url>
+          <line>53</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/raspberryturk/embedded/raspberryturkd.py</url>
+          <line>34</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/raspberryturk$__main__.coverage" NAME="__main__ Coverage Results" MODIFIED="1617812087843" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/raspberryturk" />
+    <SUITE FILE_PATH="coverage/raspberryturk$raspberryturk_debug.coverage" NAME="raspberryturk_debug Coverage Results" MODIFIED="1618003956065" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/build/lib/raspberryturk" />
+  </component>
+</project>

@@ -11,7 +11,8 @@ __version__ = '0.0.1-beta'
 app_directory = 'raspberryturk'
 
 def _root():
-    return os.path.abspath(os.sep)
+    return "/Users/jackzender/Desktop/raspberryturk/"
+    #return os.path.abspath(os.sep)
 
 def _var_subdir(subdir, *paths):
     return os.path.join(_root(), 'var', subdir, app_directory, *paths)
@@ -39,7 +40,7 @@ class RaspberryTurkError(Exception):
 
 def is_running_on_raspberryturk():
     print(gethostname())
-    return gethostname() == 'raspberryturk'
+    return gethostname() == 'Jacks-MacBook-Air.local'
 
 LOGGING_FORMAT = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 

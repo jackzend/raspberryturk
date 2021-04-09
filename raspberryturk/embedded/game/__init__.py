@@ -12,8 +12,8 @@ def _logger():
     return logging.getLogger(__name__)
 
 def _game():
-    with open(CURRENT_GAME_PATH) as pgn:
-        return read_game(pgn)
+    with open(CURRENT_GAME_PATH) as pgn1:
+        return read_game(pgn1)
 
 def _save_game(game, path=CURRENT_GAME_PATH):
     _logger().info("Saving game '{}'...".format(path))
@@ -52,6 +52,9 @@ def enter_game(fn):
 
 def get_board():
     g = _game()
+    print(g.board())
+    if g.end() == None:
+        return g.board()
     return g.end().board()
 
 def apply_move(move, comment=''):

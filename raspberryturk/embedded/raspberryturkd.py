@@ -8,7 +8,7 @@ from raspberryturk.embedded.agent import Agent
 
 class RaspberryTurkDaemon(object):
     def __init__(self):
-        self.stdin_path = '/dev/null'
+        self.stdin_path = None#'/dev/null'
         self.stdout_path = raspberryturk.log_path('raspberryturk.out')
         self.stderr_path = raspberryturk.log_path('raspberryturk.err')
         self.pidfile_path =  raspberryturk.run_path('raspberryturkd.pid')
@@ -30,14 +30,17 @@ class RaspberryTurkDaemon(object):
         self._interrupt_signum = signum
 
 def main():
-    rtd = RaspberryTurkDaemon()
-    daemon_runner = runner.DaemonRunner(rtd)
-    daemon_runner.daemon_context.signal_map = {
-        signal.SIGINT: rtd.interrupt_handler,
-        signal.SIGTERM: rtd.interrupt_handler,
-        signal.SIGHUP: 'terminate',
-    }
-    daemon_runner.do_action()
+    with Agent() as a:
+        while True:
+            a.perception_action_sequence()
+    # rtd = RaspberryTurkDaemon()
+    #daemon_runner = runner.DaemonRunner(rtd)
+    #daemon_runner.daemon_context.signal_map = {
+    #    signal.SIGINT: rtd.interrupt_handler,
+    #    signal.SIGTERM: rtd.interrupt_handler,
+    #    signal.SIGHUP: 'terminate',
+    #}
+    #daemon_runner.do_action()
 
 if __name__ == '__main__':
     main()
