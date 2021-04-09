@@ -3,7 +3,7 @@ from time import sleep
 import chess
 from pypose.ax12 import *
 from pypose.driver import Driver
-from raspberryturk.embedded.motion.gripper_movement_engine import GripperMovementEngine
+from raspberryturk.embeedded.motion.gripper_movement_engine import GripperMovementEngine
 
 electromagnet_pin = 40
 servo_pin = 38
