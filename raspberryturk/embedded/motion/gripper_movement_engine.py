@@ -17,26 +17,26 @@ def _load_tree(logger):
     except (OSError, IOError):
         logger.info("Failed to load kd-tree from {}".format(cached_tree_path))
 
-if tree is None:
-        try:
-            pts_path = opt_path('arm_movement_engine_pts.npy')
-            logger.info("Loading {}...".format(pts_path))
-            with open(pts_path, 'rb') as f:
-                pts = np.load(f)
-                logger.info("Building kd-tree...")
-                tree = KDTree(pts)
-                logger.info("Done building kd-tree.")
-                needs_to_write_cache = True
-        except IOError:
-            raise RaspberryTurkError("Arm movement engine can't find required file: {}".format(pts_path))
-        else:
+    if tree is None:
             try:
-                with open(cached_tree_path, 'wb') as f:
-                    logger.info("Writing kd-tree to cache...")
-                    pickle.dump(tree, f)
-                    logger.info("Done writing kd-tree to cache.")
-            except (OSError, IOError) as e:
-                logger.warn("Failed to write kdtree to {}. Reason: {}.".format(cached_tree_path, e))
+                pts_path = opt_path('arm_movement_engine_pts.npy')
+                logger.info("Loading {}...".format(pts_path))
+                with open(pts_path, 'rb') as f:
+                    pts = np.load(f)
+                    logger.info("Building kd-tree...")
+                    tree = KDTree(pts)
+                    logger.info("Done building kd-tree.")
+                    needs_to_write_cache = True
+            except IOError:
+                raise RaspberryTurkError("Arm movement engine can't find required file: {}".format(pts_path))
+            else:
+                try:
+                    with open(cached_tree_path, 'wb') as f:
+                        logger.info("Writing kd-tree to cache...")
+                        pickle.dump(tree, f)
+                        logger.info("Done writing kd-tree to cache.")
+                except (OSError, IOError) as e:
+                    logger.warn("Failed to write kdtree to {}. Reason: {}.".format(cached_tree_path, e))
 
     return tree
 

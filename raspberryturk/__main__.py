@@ -49,7 +49,9 @@ def _get_args():
 
 def main():
     args = _get_args()
-    assert raspberryturk.is_running_on_raspberryturk(), "Must be running on raspberryturk"
+    print(os.path.abspath(os.sep))
+    #raspberryturk.is_running_on_raspberryturk()
+    #assert raspberryturk.is_running_on_raspberryturk(), "Must be running on raspberryturk"
     args.func(args)
 
 if __name__ == '__main__':
