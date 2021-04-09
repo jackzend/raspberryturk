@@ -67,6 +67,7 @@ class Agent(object): # UNCOMMENT MOTION STUFF WHEN WE HAVE MOTION
             return False
             game.start_new_game()
         elif b.turn == chess.WHITE: # this is the players move so the camera has to pick up the difference
+            print(b)
             print("Legal Moves: ")
             printt = []
             for move in b.legal_moves:
@@ -76,6 +77,7 @@ class Agent(object): # UNCOMMENT MOTION STUFF WHEN WE HAVE MOTION
             if m is not None: # we make sure the move is not a null move (it isnt)
                 game.apply_move(m) # apply the move
         else: # this is the turks move
+            print(b)
             m = self._player.select_move(b) # select move from stockfish
             #self._motion_coordinator.move_piece(m, b) # move the piece # uncomment this to move
             game.apply_move(m)
