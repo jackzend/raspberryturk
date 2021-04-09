@@ -52,15 +52,17 @@ def enter_game(fn):
 
 def get_board():
     g = _game()
-    print(g.end().board())
+    #print(g.end().board())
     if g.end() == None:
         return g.board()
     return g.end().board()
 
 def apply_move(move, comment=''):
+
     _logger().info("Applying move {}...".format(move.uci()))
     g = _game()
     b = g.end().board()
+    print(b)
     assert move in b.legal_moves, "{0} is not a legal move for board {1}".format(move.uci(), b.fen())
     g.end().add_main_variation(move, comment=comment)
     b.push(move)

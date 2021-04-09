@@ -114,7 +114,7 @@
       <workItem from="1617300832031" duration="1065000" />
       <workItem from="1617758482464" duration="810000" />
       <workItem from="1617811254692" duration="2937000" />
-      <workItem from="1617823747192" duration="23008000" />
+      <workItem from="1617823747192" duration="23308000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed small python version discrepencies in __main__.py. (wrong print statement) and human_player.py (old type of error handling).&#10;&#10;added comment in stockfish_player.py (the whole code is running on an old version of python chess. we need to either run on that version or convert the code to the newest version)">
       <created>1615848637375</created>
@@ -200,11 +200,6 @@
           <url>file://$PROJECT_DIR$/venv/lib/python3.9/site-packages/raspberryturk-0.0.1b0-py3.9.egg/raspberryturk/__main__.py</url>
           <line>53</line>
           <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/raspberryturk/embedded/raspberryturkd.py</url>
-          <line>34</line>
-          <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/raspberryturk/embedded/agent.py</url>

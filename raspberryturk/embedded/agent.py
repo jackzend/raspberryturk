@@ -68,9 +68,10 @@ class Agent(object): # UNCOMMENT MOTION STUFF WHEN WE HAVE MOTION
             game.start_new_game()
         elif b.turn == chess.WHITE: # this is the players move so the camera has to pick up the difference
             print("Legal Moves: ")
+            printt = []
             for move in b.legal_moves:
-                strr = move.uci()
-                print(strr)
+                printt.append(move.uci())
+            print(printt)
             m = self._next_move() # we spoof the next move function with user input
             if m is not None: # we make sure the move is not a null move (it isnt)
                 game.apply_move(m) # apply the move
