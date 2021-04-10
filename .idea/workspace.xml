@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9088468d-1d32-4076-8468-6db813abcfc8" name="Default Changelist" comment="-- Same commit as before but uncommented some lines" />
+    <list default="true" id="9088468d-1d32-4076-8468-6db813abcfc8" name="Default Changelist" comment="new branch">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -114,7 +116,7 @@
       <workItem from="1617300832031" duration="1065000" />
       <workItem from="1617758482464" duration="810000" />
       <workItem from="1617811254692" duration="2937000" />
-      <workItem from="1617823747192" duration="24117000" />
+      <workItem from="1617823747192" duration="24389000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed small python version discrepencies in __main__.py. (wrong print statement) and human_player.py (old type of error handling).&#10;&#10;added comment in stockfish_player.py (the whole code is running on an old version of python chess. we need to either run on that version or convert the code to the newest version)">
       <created>1615848637375</created>
@@ -151,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617932607417</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="new branch">
+      <created>1618006458330</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1618006458330</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,7 +195,8 @@
     <MESSAGE value="requirements.txt file &#10;&#10;run &quot;pip install -r requirements.txt&quot; and it should automattically pull the packages and the proper versions" />
     <MESSAGE value="fixed some issues with gripper.py importing the wrong package" />
     <MESSAGE value="-- Same commit as before but uncommented some lines" />
-    <option name="LAST_COMMIT_MESSAGE" value="-- Same commit as before but uncommented some lines" />
+    <MESSAGE value="new branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="new branch" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
