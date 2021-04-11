@@ -1,7 +1,7 @@
 import logging
-import signal
+#import signal
 import time
-from daemon import runner
+#from daemon import runner
 import raspberryturk
 from raspberryturk.embedded.agent import Agent
 
