@@ -4,6 +4,7 @@ import chess
 import time
 from raspberryturk import games_path
 from chess.pgn import read_game, Game, FileExporter
+from shutil import copyfile
 
 TEMPORARY_GAME_PATH = os.path.extsep.join(['tmp', 'pgn'])
 CURRENT_GAME_PATH = games_path(os.path.extsep.join(['game', 'pgn']))
@@ -16,6 +17,7 @@ def _game():
         return read_game(pgn1)
 def _replace_game_file():
     os.remove(CURRENT_GAME_PATH)
+    copyfile("/home/pi/raspberryturk/game.pgn",CURRENT_GAME_PATH)
 
 def _save_game(game, path=CURRENT_GAME_PATH):
     _logger().info("Saving game '{}'...".format(path))

@@ -6,6 +6,8 @@ from raspberryturk.embedded import game
 #from raspberryturk.embedded.vision.chess_camera import ChessCamera
 from raspberryturk.embedded.motion.coordinator import Coordinator
 
+
+
 import io
 import chess
 import time
