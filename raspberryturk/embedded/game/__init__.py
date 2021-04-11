@@ -14,6 +14,8 @@ def _logger():
 def _game():
     with open(CURRENT_GAME_PATH) as pgn1:
         return read_game(pgn1)
+def _replace_game_file():
+    os.remove(CURRENT_GAME_PATH)
 
 def _save_game(game, path=CURRENT_GAME_PATH):
     _logger().info("Saving game '{}'...".format(path))
