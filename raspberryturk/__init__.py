@@ -41,7 +41,7 @@ class RaspberryTurkError(Exception):
 
 def is_running_on_raspberryturk():
     print(gethostname())
-    return gethostname() == 'pi'
+    return gethostname() == 'raspberrypi'
 
 LOGGING_FORMAT = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 
