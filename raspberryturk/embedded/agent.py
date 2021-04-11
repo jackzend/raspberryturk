@@ -21,7 +21,7 @@ class Agent(object): # UNCOMMENT MOTION STUFF WHEN WE HAVE MOTION
         self._player = StockfishPlayer()
 
     def __enter__(self):
-        #self._motion_coordinator = Coordinator() # removing motion for now
+        #self._motion_coordinator = Coordinator() # removing motion for now uncomment this to add motion
         #self._motion_coordinator.reset()
         return self
 
