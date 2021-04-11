@@ -126,4 +126,5 @@ ENV/
 # Atom Sync
 .sync-config.cson
 
+stockfish
 .idea
