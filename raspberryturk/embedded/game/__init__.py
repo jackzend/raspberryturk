@@ -86,16 +86,16 @@ def setup_games_repo():
 
 def _sync():
     _logger().info("Syncing games...")
-    b = get_board()
-    commit_message = "new game"
-    if len(b.move_stack) > 0:
-        color = chess.COLOR_NAMES[not b.turn]
-        move = b.move_stack[-1].uci()
-        commit_message = "{} {}".format(color, move)
-    commands = [
-        "cd {}".format(games_path()),
-        "git add --all",
-        "git commit -m \"{}\"".format(commit_message)
-    ]
-    os.system(";".join(commands))
-    _logger().info("Sync games successful.")
+    #b = get_board()
+    #commit_message = "new game"
+    #if len(b.move_stack) > 0:
+    #    color = chess.COLOR_NAMES[not b.turn]
+    #    move = b.move_stack[-1].uci()
+    #    commit_message = "{} {}".format(color, move)
+    #commands = [
+    #    "cd {}".format(games_path()),
+    #    "git add --all",
+    #    "git commit -m \"{}\"".format(commit_message)
+    #]
+    #os.system(";".join(commands))
+    #_logger().info("Sync games successful.")

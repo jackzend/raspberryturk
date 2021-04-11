@@ -82,5 +82,5 @@ class Agent(object): # UNCOMMENT MOTION STUFF WHEN WE HAVE MOTION
             m = self._player.select_move(b) # select move from stockfish
             #self._motion_coordinator.move_piece(m, b) # move the piece # uncomment this to move
             game.apply_move(m)
-        self._write_status() # update to status.txt
+        #self._write_status() # update to status.txt
         return True
