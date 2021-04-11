@@ -31,7 +31,7 @@ endif
 EXE = stockfish
 
 ### Installation dir definitions
-PREFIX = /usr/local
+PREFIX = /
 BINDIR = $(PREFIX)/bin
 
 ### Built-in benchmark for pgo-builds
