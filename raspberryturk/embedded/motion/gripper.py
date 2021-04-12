@@ -3,7 +3,6 @@ from time import sleep
 import chess
 from pypose.ax12 import *
 from pypose.driver import Driver
-#from raspberryturk.embeedded.motion.gripper_movement_engine import GripperMovementEngine
 
 electromagnet_pin = 40
 servo_pin = 38
@@ -17,10 +16,18 @@ PIECE_HEIGHTS = {
     chess.PAWN: 19
 }
 
+PIECE_WIDTHS = {
+
+}
+
 MAX_PIECE_HEIGHT = max(PIECE_HEIGHTS.values())
 RESTING_HEIGHT = MAX_PIECE_HEIGHT + 15
 
 class Gripper(object):
+    def __init__(self):
+        
+
+    '''
     def __init__(self):
         self.previous_z = None
         GPIO.setmode(GPIO.BOARD)
@@ -66,3 +73,4 @@ class Gripper(object):
 
     def cleanup(self):
         GPIO.cleanup()
+    '''
