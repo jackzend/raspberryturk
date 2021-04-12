@@ -5,6 +5,8 @@ import time
 from raspberryturk.embedded.motion.gripper import Gripper
 from raspberryturk.embedded.motion.arm import Arm
 
+TRAVEL_HEIGHT = 25
+
 # Perform a castle move
 def _castling(move, board):
     return move.from_square in [chess.E1, chess.E8] \
@@ -50,6 +52,7 @@ class Coordinator(object):
     def _execute_move(self, origin, destination, piece_type):
         self._logger.info("Moving piece {} at {} to {}...".format(piece_type, origin, destination))
         t0 = time.time()
+        #Slider moves to correct row
         self.arm.move_to_point(origin)
         self.gripper.pickup(piece_type)     #Needs modifying
         self.arm.move_to_point(destination)
