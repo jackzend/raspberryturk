@@ -45,7 +45,7 @@ class ArmMovementEngine(object):
         logger = logging.getLogger(__name__)
         self._tree = _load_tree(logger)
 
-    #Converts from bits to the angle
+    # Converts from xy to bits
     def convert_point(self, pt):
         pt = np.array(pt).reshape(-1, 2)
         index = self._tree.query(pt, return_distance=False).ravel()[0]

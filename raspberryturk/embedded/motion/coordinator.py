@@ -18,6 +18,11 @@ def _sq_to_pt(sq):
     i = 63 - sq
     return np.array([i % 8, i / 8]) * 2.25 + 1.125
 
+def _sq_to_row(pt):
+    i = 63 - sq
+    return (i / 8) * 2.25 + 1.125
+
+
 class Coordinator(object):
     def __init__(self):
         self.gripper = Gripper()    #May need modifying
