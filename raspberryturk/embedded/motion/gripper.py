@@ -8,25 +8,26 @@ electromagnet_pin = 40
 servo_pin = 38
 
 PIECE_HEIGHTS = {
-    chess.KING: 41,
-    chess.QUEEN: 34,
-    chess.ROOK: 20,
-    chess.BISHOP: 28,
-    chess.KNIGHT: 24,
-    chess.PAWN: 19
+    chess.KING: 97,
+    chess.QUEEN: 75,
+    chess.ROOK: 46,
+    chess.BISHOP: 65,
+    chess.KNIGHT: 58,
+    chess.PAWN:45
 }
 
 PIECE_WIDTHS = {
-    chess.KING: 0,
-    chess.QUEEN: 0,
-    chess.ROOK: 0,
-    chess.BISHOP 0,
-    chess.KNIGHT: 0,
-    chess.PAWN: 0,
+    chess.KING: 22,
+    chess.QUEEN: 24,
+    chess.ROOK: 22,
+    chess.BISHOP 18,
+    chess.KNIGHT: 10,
+    chess.PAWN: 14
 }
 
 MAX_PIECE_HEIGHT = max(PIECE_HEIGHTS.values())
 RESTING_HEIGHT = MAX_PIECE_HEIGHT + 15
+SPEED = 5
 
 class Gripper(object):
     def __init__(self, port="/dev/ttyUSB0"):
@@ -35,14 +36,24 @@ class Gripper(object):
     def close(self):
         self.driver.close()
 
+    def mm_to_bytes(length):
+        # Some code that scales the grip width to bytes
+
     # Opens gripper fully, index value may be incorrect
-    def open_gripper(self):
-        self.driver.setReg(1, P_GOAL_POSITION_L, [0, 10])
+    def open_gripper(self, speed):
+        self.driver.setReg(4, P_GOAL_SPEED_L, [speed[i%2]%256, speed[i%2]>>8])
+        self.driver.setReg(4, P_GOAL_POSITION_L, [511, 525])
+
+    def move(self, piece_type, speed):
+        piece_width = PIECE_WIDTHS[piece_type]
+        self.driver.setReg(4, P_GOAL_SPEED_L, [speed[i%2]%256, speed[i%2]>>8])
+        self.driver.setReg(4, P_GOAL_POSITION_L, [mm_to_bytes(piece_width - 20), mm_to_bytes(piece_width + 20)])
 
     def grab_piece(self, piece_type):
-        piece_width = PIECE_WIDTHS[piece_type]
-        
-    
+        self.move(piece_type, [SPEED, SPEED])
+
+    def dropoff_piece(self):
+        self.open_gripper([SPEED, SPEED])
         
 
     '''

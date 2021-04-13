@@ -59,9 +59,11 @@ class Coordinator(object):
         t0 = time.time()
         #Slider moves to correct row
         self.arm.move_to_point(origin)
-        self.gripper.pickup(piece_type)     #Needs modifying
+        self.gripper.grab_piece(piece_type)     #NEW GRIPPER FUNCTION
+        #Arm up to travel height
+        #Slider to row
         self.arm.move_to_point(destination)
-        self.gripper.dropoff(piece_type)    #Needs modifying
+        self.gripper.dropoff_piece()   #NEW GRIPPER FUNCTION
         self.arm.return_to_rest()
         elapsed_time = time.time() - t0
         self._logger.info("Done moving piece (elapsed time: {}s).".format(elapsed_time))
