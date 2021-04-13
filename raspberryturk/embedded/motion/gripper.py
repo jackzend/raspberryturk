@@ -17,14 +17,32 @@ PIECE_HEIGHTS = {
 }
 
 PIECE_WIDTHS = {
-
+    chess.KING: 0,
+    chess.QUEEN: 0,
+    chess.ROOK: 0,
+    chess.BISHOP 0,
+    chess.KNIGHT: 0,
+    chess.PAWN: 0,
 }
 
 MAX_PIECE_HEIGHT = max(PIECE_HEIGHTS.values())
 RESTING_HEIGHT = MAX_PIECE_HEIGHT + 15
 
 class Gripper(object):
-    def __init__(self):
+    def __init__(self, port="/dev/ttyUSB0"):
+        self.driver = Driver(port=port)
+
+    def close(self):
+        self.driver.close()
+
+    # Opens gripper fully, index value may be incorrect
+    def open_gripper(self):
+        self.driver.setReg(1, P_GOAL_POSITION_L, [0, 10])
+
+    def grab_piece(self, piece_type):
+        piece_width = PIECE_WIDTHS[piece_type]
+        
+    
         
 
     '''
