@@ -28,6 +28,7 @@ PIECE_WIDTHS = {
 MAX_PIECE_HEIGHT = max(PIECE_HEIGHTS.values())
 RESTING_HEIGHT = MAX_PIECE_HEIGHT + 15
 SPEED = 5
+MM_PER_COUNT = 0.08481958
 
 class Gripper(object):
     def __init__(self, port="/dev/ttyUSB0"):
@@ -37,17 +38,18 @@ class Gripper(object):
         self.driver.close()
 
     def mm_to_bytes(length):
-        # Some code that scales the grip width to bytes
+        return (length / MM_PER_COUNT) + 512
+        
 
     # Opens gripper fully, index value may be incorrect
     def open_gripper(self, speed):
         self.driver.setReg(4, P_GOAL_SPEED_L, [speed[i%2]%256, speed[i%2]>>8])
-        self.driver.setReg(4, P_GOAL_POSITION_L, [511, 525])
+        self.driver.setReg(4, P_GOAL_POSITION_L, [512, 525])
 
     def move(self, piece_type, speed):
         piece_width = PIECE_WIDTHS[piece_type]
         self.driver.setReg(4, P_GOAL_SPEED_L, [speed[i%2]%256, speed[i%2]>>8])
-        self.driver.setReg(4, P_GOAL_POSITION_L, [mm_to_bytes(piece_width - 20), mm_to_bytes(piece_width + 20)])
+        self.driver.setReg(4, P_GOAL_POSITION_L, [mm_to_bytes(piece_width), mm_to_bytes(piece_width) + 2])
 
     def grab_piece(self, piece_type):
         self.move(piece_type, [SPEED, SPEED])
