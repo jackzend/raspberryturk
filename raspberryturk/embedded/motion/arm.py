@@ -54,7 +54,8 @@ class Arm(object):
 
     #Moves arm to its rest position
     def return_to_rest(self):
-        self.move_to_point([20, 13.5])
+        #move slider all the way to end
+        self.move_to_point([-15, 8])
 
     #Moves arm to correct position
     def move(self, goal_position):

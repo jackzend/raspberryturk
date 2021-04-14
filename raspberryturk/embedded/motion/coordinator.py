@@ -5,7 +5,16 @@ import time
 from raspberryturk.embedded.motion.gripper import Gripper
 from raspberryturk.embedded.motion.arm import Arm
 
-TRAVEL_HEIGHT = 25
+TRAVEL_HEIGHT = -15
+
+PIECE_HEIGHTS = {
+    chess.KING: 4,
+    chess.QUEEN: 3,
+    chess.ROOK: 1.8,
+    chess.BISHOP: 2.6,
+    chess.KNIGHT: 2.3,
+    chess.PAWN: 1.8
+}
 
 # Perform a castle move
 def _castling(move, board):
@@ -46,7 +55,7 @@ class Coordinator(object):
             captured_piece = board.piece_at(move.to_square)
             # If there is a piece that needs to be captured, capture piece first
             if captured_piece is not None:
-                self._execute_move(_sq_to_pt(move.to_square), [20, 13.5], \
+                self._execute_move(_sq_to_pt(move.to_square), [TRAVEL_HEIGHT, 10], \
                                    captured_piece.piece_type)
         piece = board.piece_at(move.from_square)
         self._execute_move(_sq_to_pt(move.from_square), \
@@ -56,13 +65,17 @@ class Coordinator(object):
     # Executes move
     def _execute_move(self, origin, destination, piece_type):
         self._logger.info("Moving piece {} at {} to {}...".format(piece_type, origin, destination))
+        piece_height = PIECE_HEIGHTS[piece_type]
         t0 = time.time()
         #Slider moves to correct row
-        self.arm.move_to_point(origin)
+        self.arm.move_to_point([TRAVEL_HEIGHT, origin[1]])
+        self.arm.move_to_point([-piece_height - 5, origin[1]])
         self.gripper.grab_piece(piece_type)     #NEW GRIPPER FUNCTION
         #Arm up to travel height
+        self.arm.move_to_point([TRAVEL_HEIGHT, origin[1]])
         #Slider to row
-        self.arm.move_to_point(destination)
+        self.arm.move_to_point([TRAVEL_HEIGHT, destination[1]])
+        self.arm.move_to_point([[-piece_height - 5, destination[1]])
         self.gripper.dropoff_piece()   #NEW GRIPPER FUNCTION
         self.arm.return_to_rest()
         elapsed_time = time.time() - t0
