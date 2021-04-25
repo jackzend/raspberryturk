@@ -31,7 +31,7 @@ import logging
 
 class Driver:
     """ Class to open a serial port and control AX-12 servos
-    through an arbotiX board or USBDynamixel. """
+    through an arbotiX board or USBDynamixel. """ ## CHANGE DRIVER PORT
     def __init__(self, port="/dev/ttyUSB0",baud=38400, interpolation=False, direct=False, verbose=False):
         """ This may throw errors up the line -- that's a good thing. """
         self.ser = serial.Serial()
@@ -148,3 +148,6 @@ class Driver:
                 self.ser.write(chr(value))
         self.ser.write(chr(checksum))
         # no return info...
+
+    def close(self):
+        self.ser.close()

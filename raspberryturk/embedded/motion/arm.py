@@ -8,16 +8,19 @@ from raspberryturk.embedded.motion.arm_movement_engine import ArmMovementEngine
 from pypose.ax12 import *
 from pypose.driver import Driver
 
-SERVO_1 = 1
-SERVO_2 = 2
-SERVOS = [SERVO_2, SERVO_1]
-MIN_SPEED = 20
+## MAKE SURE TO CHANGE THESE VALUES WHEN TESTING THE ARM OR ELSE POTENTIAL DISASTER
+SERVO_1 = 1 # SHOULDER
+SERVO_2 = 2 # ELBOW
+SERVOS = [SERVO_2, SERVO_1] # ELBOW, SHOULDER
+MIN_SPEED = 70
 MAX_SPEED = 80
 RESTING_POSITION = (512, 512)
 
 # Converts the registers bytes to the base 10 value of the register
 def _register_bytes_to_value(register_bytes):
-    return register_bytes[0] + (register_bytes[1]<<8)
+    #print register_bytes
+
+    return register_bytes[0] + (register_bytes[1] << 8)
 
 # Takes derivative of easeInOutQuint at x0 = p
 def _easing_derivative(p):
@@ -39,7 +42,7 @@ def _adjusted_speed(start_position, goal_position, position):
 
 # Creates a class for the arm object
 class Arm(object):
-    def __init__(self, port="/dev/ttyUSB0"):
+    def __init__(self, port="/dev/tty.usbserial-AR0JW21B"): # change port
         self.driver = Driver(port=port)
         self.movement_engine = ArmMovementEngine()
 
@@ -49,7 +52,7 @@ class Arm(object):
 
     #Recenters the arm to its starting position
     def recenter(self):
-        self.move((512, 512))
+        self.move((700, 755))
 
     #Moves arm to its rest position
     def return_to_rest(self):
@@ -57,7 +60,10 @@ class Arm(object):
 
     #Moves arm to correct position
     def move(self, goal_position):
+        #print(goal_position)
+        time.sleep(0.2)
         start_position = self.current_position()
+        #print(start_position)
         self.set_speed([MIN_SPEED, MIN_SPEED])
         for i in SERVOS:
             self.driver.setReg(i, P_GOAL_POSITION_L, [goal_position[i%2]%256, goal_position[i%2]>>8])
@@ -78,6 +84,7 @@ class Arm(object):
 
     #Returns the current position of the servo
     def current_position(self):
+        #print(self._values_for_register(P_PRESENT_POSITION_L))
         return self._values_for_register(P_PRESENT_POSITION_L)
 
     #Checks if the servos are moving

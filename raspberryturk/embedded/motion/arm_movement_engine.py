@@ -4,11 +4,12 @@ import pickle
 import logging
 from raspberryturk import RaspberryTurkError, opt_path, cache_path
 from sklearn.neighbors import KDTree
+from itertools import product
 
 def _load_tree(logger):
     tree = None
 
-    cached_tree_path = cache_path('arm_movement_engine.kdtree')
+    cached_tree_path = 'arm_movement_engine.kdtree'
     try:
         with open(cached_tree_path, 'rb') as f:
             logger.info("Attemptimg to load kd-tree from cache...")
@@ -19,7 +20,7 @@ def _load_tree(logger):
 
     if tree is None:
         try:
-            pts_path = opt_path('arm_movement_engine_pts.npy')
+            pts_path = 'arm_movement_engine_pts.npy'
             logger.info("Loading {}...".format(pts_path))
             with open(pts_path, 'rb') as f:
                 pts = np.load(f)
@@ -45,8 +46,11 @@ class ArmMovementEngine(object):
         logger = logging.getLogger(__name__)
         self._tree = _load_tree(logger)
 
-    def convert_point(self, pt):
+    def convert_point(self, pt): ## NOT SURE IF THIS WORKS LOL
         pt = np.array(pt).reshape(-1, 2)
-        index = self._tree.query(pt, return_distance=False).ravel()[0]
+        index = self._tree.query(pt, return_distance=False).ravel()[0] # elbow shoulder
         calibrated_offset = 105
-        return np.array([index/1024+calibrated_offset, index%1024])
+        srange = np.array(list(product(range(1024), range(1024))))
+
+        #return np.array([index/1024+calibrated_offset, index%1024])
+        return np.array(srange[self._tree.query(pt, return_distance=False)]).reshape(-1, 2)

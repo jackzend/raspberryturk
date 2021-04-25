@@ -23,12 +23,12 @@ class Agent(object): # UNCOMMENT MOTION STUFF WHEN WE HAVE MOTION
         self._player = StockfishPlayer()
 
     def __enter__(self):
-        #self._motion_coordinator = Coordinator() # removing motion for now uncomment this to add motion
-        #self._motion_coordinator.reset()
+        self._motion_coordinator = Coordinator() # removing motion for now uncomment this to add motion
+        self._motion_coordinator.reset()
         return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):
-        #self._motion_coordinator.close()
+        self._motion_coordinator.close()
         self._motion_coordinator = None
         return False
 
@@ -83,7 +83,7 @@ class Agent(object): # UNCOMMENT MOTION STUFF WHEN WE HAVE MOTION
         else: # this is the turks move
             print(b)
             m = self._player.select_move(b) # select move from stockfish
-            #self._motion_coordinator.move_piece(m, b) # move the piece # uncomment this to move
+            self._motion_coordinator.move_piece(m, b) # move the piece # uncomment this to move
             game.apply_move(m)
         #self._write_status() # update to status.txt
         return True
