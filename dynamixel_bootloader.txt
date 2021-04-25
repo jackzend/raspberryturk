@@ -1,0 +1,63 @@
+
+#include <SoftwareSerial.h>
+
+class DynSoftwareSerial:public SoftwareSerial
+{
+  public:
+  DynSoftwareSerial(uint8_t aRxPin, uint8_t aTxPin):
+    SoftwareSerial(aRxPin, aTxPin), mTxPin(aTxPin)
+  {}
+  
+  void enableTx(){pinMode(mTxPin, OUTPUT);}
+  void disableTx(){pinMode(mTxPin, INPUT);}
+
+  void setReadMode()
+  {
+    disableTx();
+    listen();
+  }
+
+  void setWriteMode()
+  {
+    stopListening();
+    enableTx();
+  }
+
+  private:
+  uint8_t mTxPin;
+};
+
+DynSoftwareSerial soft_serial(2,3);
+
+
+void setup() {
+  
+  soft_serial.begin(57600);
+  soft_serial.setReadMode();
+
+  while(!soft_serial.available())
+  {
+     soft_serial.setWriteMode();
+     soft_serial.write('#');
+     soft_serial.setReadMode();
+     delay(10);
+  }
+  Serial.begin(57600);
+}
+
+void loop() {
+  if(Serial.available())
+  {
+    uint8_t data=Serial.read();
+    soft_serial.setWriteMode();
+    soft_serial.write(data);
+    soft_serial.setReadMode();
+  }
+  
+  if(soft_serial.available())
+  {
+    uint8_t data=soft_serial.read();
+    Serial.write(data);
+  }
+  delay(1);
+}
