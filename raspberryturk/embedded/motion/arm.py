@@ -16,6 +16,7 @@ MIN_SPEED = 70
 MAX_SPEED = 80
 RESTING_POSITION = (512, 512)
 
+
 # Converts the registers bytes to the base 10 value of the register
 def _register_bytes_to_value(register_bytes):
     #print register_bytes
@@ -56,7 +57,8 @@ class Arm(object):
 
     #Moves arm to its rest position
     def return_to_rest(self):
-        self.move_to_point([20, 13.5])
+        #move slider all the way to end
+        self.move_to_point([-15, 8])
 
     #Moves arm to correct position
     def move(self, goal_position):
